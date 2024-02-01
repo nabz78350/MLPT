@@ -1,0 +1,15 @@
+bs4
+textract
+numpy
+pandas
+requests
+tqdm
+nltk
+scikit-plot
+seaborn
+sklearn
+transformers
+wordcloud
+xgboost
+torch
+quandl
