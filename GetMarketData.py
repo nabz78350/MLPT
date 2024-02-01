@@ -4,7 +4,6 @@ import os
 import numpy as np
 import pandas as pd
 from tqdm import tqdm
-import logging
 from full_fred.fred import Fred
 import quandl
 
@@ -131,9 +130,9 @@ def get_quandl_futures(exchange, code, depth):
 
 
 if __name__ == "__main__":
-    # for pair in CURRENCIES:
-    #     fx_rate = get_forex(pair)
-    #     save_data("Currencies",pair,fx_rate)
+    for pair in CURRENCIES:
+        fx_rate = get_forex(pair)
+        save_data("Currencies",pair,fx_rate)
 
     for serie in INDICATOR:
         try:
@@ -142,16 +141,10 @@ if __name__ == "__main__":
         except:
             pass
 
-    # for curr in tqdm(CURRENCIES):
-    #     for serie in MAPPING[curr]:
-    #         try :
-    #             data = get_fred_serie(serie)
-    #             save_data(os.path.join("Indicator",curr),serie,data)
-    #         except:
-    #             pass
-
-    # futures = [('CME','FF','1')]
-    # for future in futures:
-    #     exchange, code, depth = (*future,)
-    #     data = get_quandl_futures(exchange,code,depth)
-    #     save_data("Indicator",code,data)
+    for curr in tqdm(CURRENCIES):
+        for serie in MAPPING[curr]:
+            try :
+                data = get_fred_serie(serie)
+                save_data(os.path.join("Indicator",curr),serie,data)
+            except:
+                pass

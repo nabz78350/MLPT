@@ -1,6 +1,6 @@
 from scipy import stats
 import numpy as np
-from utils import *
+from data_handling import *
 import random
 
 random.seed(0)
