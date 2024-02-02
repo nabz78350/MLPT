@@ -8,14 +8,13 @@ from scipy import stats
 from empyrical import sharpe_ratio
 import random
 from tqdm import tqdm
-from utils import *
 from data_handling import *
 from model import *
 
 random.seed(0)
 np.random.seed(0)
 
-RESULTS_DIR = "results"
+RESULTS_DIR = "results_tuned"
 
 
 def wrapper(a, b, A, B, s, R_y, period, target: str = "JPY", result_dir="results"):
@@ -136,7 +135,7 @@ def grid_search(
 
 
 if __name__ == "__main__":
-    targets = CURRENCIES[:3]
+    targets = CURRENCIES
 
     for curr in tqdm(targets):
         save_data_model(RESULTS_DIR, curr, "all")

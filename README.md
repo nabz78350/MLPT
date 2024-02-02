@@ -6,7 +6,6 @@ to install required packages run
 py -m pip install -r requirements.txt
 ```
 
-
 To download market data (currency returns) and macro indicators time seirs from the FRED API
 
 ```bash

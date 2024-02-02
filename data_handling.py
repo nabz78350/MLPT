@@ -5,7 +5,6 @@ from tqdm import tqdm
 import shutil
 import re
 import glob
-from utils import *
 from settings.default import CURRENCIES
 from pandas.tseries.offsets import BDay
 from empyrical import sharpe_ratio
